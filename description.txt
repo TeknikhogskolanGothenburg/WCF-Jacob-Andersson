@@ -1,0 +1,19 @@
+Jacob Andersson.
+
+
+
+Jag valde att använda wsHttpBindning, netTcpBinding och webHttpBinding.
+wsHttpBindning valde jag mest på grund av att den är krypterad hela vägen.
+
+webHttpBinding är med på grund av REST Api:et.
+
+netTcpBinding tog jag med endast för att ha nån mer endpoint.
+
+Jag valde att ha 3st Interfaces, ICarService, ICustomerService, IBookingService, för tyckte det blev lättare att hitta och läsa vad som tillhör vad.
+
+Mina exceptions hanterar jag i min CarRentalService.
+Har det på metoderna GetCarById och GetCustomerByEmail.
+
+GetCustomerByEmail metoden kollar först ifall licenskeyen stämmer eller inte,
+ifall den inte stämmer kastar den ett WebFaultException med ett meddelande + Status kod forbidden,
+som jag sen visar upp i frontenden i mitt MVC project.
